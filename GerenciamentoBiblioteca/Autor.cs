@@ -10,5 +10,10 @@ namespace GerenciamentoBiblioteca
     {
         string Nome;
         DateTime dataNascimento;
+
+        public Autor(string nome)
+        {
+            Nome = nome;
+        }
     }
 }

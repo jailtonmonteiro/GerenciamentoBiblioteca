@@ -25,7 +25,7 @@ namespace GerenciamentoBiblioteca
 
         public void Emprestar()
         {
-            
+
         }
 
         public void Devolver()
@@ -36,6 +36,15 @@ namespace GerenciamentoBiblioteca
         public void VerificarDisponibilidade()
         {
 
+        }
+
+        public override string ToString()
+        {
+            return 
+                "\nTitulo: " + titulo + 
+                "\nAutor: " + autor + 
+                "\nAno Publicação: " + anoPublicacao + 
+                "\nQuantidade de Exemplares: " + quantidadeExemplares;
         }
     }
 }
