@@ -49,7 +49,7 @@ namespace GerenciamentoBiblioteca
                 "\nTitulo: " + titulo + 
                 "\nAutor: " + autor + 
                 "\nAno Publicação: " + anoPublicacao + 
-                "\nQuantidade de Exemplares: " + quantidadeExemplares;
+                "\nQuantidade de Exemplares: " + quantidadeExemplares + "\n";
         }
     }
 }
