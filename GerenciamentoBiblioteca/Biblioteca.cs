@@ -20,12 +20,22 @@ namespace GerenciamentoBiblioteca
         public void CadastrarLivro(Livro livro)
         {
             livros.Add(livro);
-            Console.WriteLine("Livro cadastrado com sucesso!");
         }
 
         public void ConsultarLivro(string titulo)
         {
-
+            foreach (Livro livro in livros)
+            {
+                if (livro.Titulo == titulo)
+                {
+                    Console.WriteLine("Livro encontrado\n\n" + livro);
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("O livro inserido não foi encontrado!");
+                }
+            }
         }
 
         public void ListarLivros()

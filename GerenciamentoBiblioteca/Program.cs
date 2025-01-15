@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace GerenciamentoBiblioteca
+﻿namespace GerenciamentoBiblioteca
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int opcao = 1;
+            int opcao;
             Livro livro;
             Biblioteca biblioteca = new Biblioteca("Biblioteca");
 
@@ -35,6 +33,18 @@ namespace GerenciamentoBiblioteca
                         string[] dados = Console.ReadLine().Split(',');
                         livro = new Livro(dados[0], new Autor(dados[1]), int.Parse(dados[2]), int.Parse(dados[3]));
                         biblioteca.CadastrarLivro(livro);
+                        Console.WriteLine("Livro cadastrado com sucesso!");
+                        Console.WriteLine("Pressione enter para sair.");
+                        Console.ReadLine();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Consulta de Disponibilidade");
+                        Console.Write("Digite o titulo do livro: ");
+                        string titulo = Console.ReadLine();
+                        biblioteca.ConsultarLivro(titulo);
+                        Console.WriteLine("Pressione enter para sair.");
+                        Console.ReadLine();
                         break;
 
                     case 5:

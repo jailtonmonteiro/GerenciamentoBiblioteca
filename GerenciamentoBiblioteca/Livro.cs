@@ -23,6 +23,11 @@ namespace GerenciamentoBiblioteca
             this.quantidadeDisponivel = quantidadeExemplares;
         }
 
+        public string Titulo
+        {
+            get { return titulo; }
+        }
+
         public void Emprestar()
         {
 
