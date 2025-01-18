@@ -32,8 +32,16 @@
                         Console.WriteLine("Digite os dados separados por virgula ex.: (Livro,Autor,ano pub,quantidade)\nDados: ");
                         string[] dados = Console.ReadLine().Split(',');
                         livro = new Livro(dados[0], new Autor(dados[1]), int.Parse(dados[2]), int.Parse(dados[3]));
-                        biblioteca.CadastrarLivro(livro);
-                        Console.WriteLine("Livro cadastrado com sucesso!");
+                        int quantidadeCadastro = int.Parse(dados[3]);
+                        if (quantidadeCadastro <= 0)
+                        {
+                            Console.WriteLine("Quantidade de exemplares inválida");
+                        }
+                        else
+                        {
+                            biblioteca.CadastrarLivro(livro);
+                            Console.WriteLine("Livro cadastrado com sucesso!");
+                        }
                         Console.WriteLine("Pressione enter para sair.");
                         Console.ReadLine();
                         break;
@@ -46,6 +54,25 @@
                         Console.WriteLine("Pressione enter para sair.");
                         Console.ReadLine();
                         break;
+
+                    case 3:
+                        Console.WriteLine("Emprestimo");
+                        Console.Write("Digite o titulo do livro: ");
+                        titulo = Console.ReadLine();
+                        biblioteca.RealizarEmprestimo(titulo);
+                        Console.WriteLine("Pressione enter para sair.");
+                        Console.ReadLine();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Devolução");
+                        Console.Write("Digite o titulo do livro: ");
+                        titulo = Console.ReadLine();
+                        biblioteca.RealizarDevolucao(titulo);
+                        Console.WriteLine("Pressione enter para sair.");
+                        Console.ReadLine();
+                        break;
+
 
                     case 5:
                         biblioteca.ListarLivros();

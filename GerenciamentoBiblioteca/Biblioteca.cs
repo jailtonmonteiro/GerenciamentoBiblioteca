@@ -29,6 +29,7 @@ namespace GerenciamentoBiblioteca
                 if (livro.Titulo == titulo)
                 {
                     Console.WriteLine("Livro encontrado\n\n" + livro);
+                    livro.VerificarDisponibilidade();
                     return;
                 }
                 else
@@ -52,12 +53,29 @@ namespace GerenciamentoBiblioteca
 
         public void RealizarEmprestimo(string titulo)
         {
+            foreach(Livro livro in livros)
+            {
+                if (livro.Titulo == titulo)
+                {
+                    livro.Emprestar();
+                    Console.WriteLine("Livro emprestado com sucesso!");
+                    return;
+                }
+            }
 
         }
 
         public void RealizarDevolucao(string titulo)
         {
-
+            foreach (Livro livro in livros)
+            {
+                if (livro.Titulo == titulo)
+                {
+                    livro.Devolver();
+                    Console.WriteLine("Livro devolvido com sucesso!");
+                    return;
+                }
+            }
         }
     }
 }
